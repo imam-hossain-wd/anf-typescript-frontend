@@ -78,7 +78,7 @@ const Navbar = () => {
             
             {/* Logo */}
             <div className="flex-1 md:flex-none">
-              <Link href="/" className="flex items-center gap-3 group">
+              <Link href="/" className="flex items-center gap-3 group mt-3">
                 <div className="relative">
                   <Image 
                     src={brandlogo.logo} 

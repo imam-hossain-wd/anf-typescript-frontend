@@ -4,6 +4,8 @@ import "./globals.css";
 import StoreProvider from "@/Providers/StoreProviders";
 import Navbar from "@/components/shared/Navbar/Navbar";
 import { Footer } from "@/components/shared/Footer/Footer";
+import { BottomNav } from "@/components/shared/Navbar/BottomNav";
+import { FloatingActionButton } from "@/components/shared/FloatingButton/FloatingButton";
 
 
 const geistSans = Geist({
@@ -36,6 +38,8 @@ export default function RootLayout({
         <div>
           <StoreProvider>
             <Navbar />
+            <BottomNav />
+            <FloatingActionButton />
             {children}
           </StoreProvider>
           <Footer />
