@@ -17,7 +17,7 @@ const Navbar = () => {
   return (
     <>
       {/* Top Announcement Bar */}
-      <div className="bg-gradient-to-r from-emerald-600 to-green-700 text-white py-2 px-4 text-sm text-center relative overflow-hidden">
+      <div className="bg-gradient-to-r from-emerald-600 to-green-700 text-white py-2 px-4 text-sm text-center relative overflow-hidden -mb-32">
         <div className="absolute inset-0 bg-[url('/islamic-pattern.png')] opacity-10"></div>
         <div className="relative z-10">
           🕌 <strong>Your Sadaqah Changes Lives</strong> - Donate today and earn endless rewards
@@ -84,8 +84,9 @@ const Navbar = () => {
                     src={brandlogo.logo} 
                     width={160} 
                     height={140} 
+                    quality={100}
                     alt="As Nusra Foundation Logo"
-                    className="transition-transform duration-300 group-hover:scale-105"
+                    className="transition-transform duration-300 group-hover:scale-105 -ml-3 md:ml-0 w-36 h-32"
                   />
                   {/* <div className="absolute -inset-2 bg-emerald-100 rounded-full opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300 -z-10"></div> */}
                 </div>
@@ -163,7 +164,7 @@ const Navbar = () => {
         </div>
 
         {/* Secondary Navigation for Donation Types */}
-        <div className="hidden lg:block border-t border-gray-100 bg-white/80">
+        {/* <div className="hidden lg:block border-t border-gray-100 bg-white/80">
           <div className="container mx-auto px-4">
             <div className="flex items-center justify-center gap-6 py-3 overflow-x-auto">
               {[
@@ -181,7 +182,7 @@ const Navbar = () => {
               ))}
             </div>
           </div>
-        </div>
+        </div> */}
       </header>
     </>
   );

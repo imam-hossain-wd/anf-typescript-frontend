@@ -1,10 +1,11 @@
-import HomeBanner from '@/components/view/Home/HomeBanner/HomeBanner'
-
+import Hero from '@/components/view/Home/Hero/Hero'
+import ServiceSection from '@/components/view/Home/ServiceSection/ServiceSection'
 
 export default function HomePage() {
     return (
-        <div>
-            <HomeBanner />
-        </div>
+        <main className="bg-white">
+            <Hero />            
+            <ServiceSection />            
+        </main>
     )
 }
