@@ -303,7 +303,7 @@ export default function DonationCard() {
   };
 
   return (
-    <div className="bg-white/75 backdrop-blur-xl rounded-2xl shadow-2xl border border-white/20 p-6 md:w-[90%] mx-auto pb-10">
+    <div className="bg-white/75 backdrop-blur-xl rounded-2xl  border border-primary p-6 md:w-[90%] mx-auto pb-10">
       {/* Header */}
       <div className="text-center mb-6">
         <h3 className="text-xl md:text-2xl font-bold text-gray-900 mb-2 font-bangla">

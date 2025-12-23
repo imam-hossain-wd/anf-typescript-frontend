@@ -1,11 +1,13 @@
+import ActivitiesSection from '@/components/view/Activities/Activities'
 import Hero from '@/components/view/Home/Hero/Hero'
 import ServiceSection from '@/components/view/Home/ServiceSection/ServiceSection'
 
 export default function HomePage() {
     return (
         <main className="bg-white">
-            <Hero />            
-            <ServiceSection />            
+            <Hero />
+            <ServiceSection />
+            <ActivitiesSection />
         </main>
     )
 }

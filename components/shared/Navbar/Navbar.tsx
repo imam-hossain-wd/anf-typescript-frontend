@@ -121,7 +121,7 @@ const Navbar = () => {
               {/* Donate Button */}
               <Link
                 href="/donate"
-                className="hidden sm:flex items-center gap-2 bg-gradient-to-r from-amber-500 to-amber-600 hover:from-amber-600 hover:to-amber-700 text-white px-6 py-3 rounded-xl font-semibold shadow-lg hover:shadow-xl transition-all duration-300 transform hover:scale-105 group"
+                className="hidden sm:flex items-center gap-2 bg-primary hover:from-amber-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg"
               >
                 <Heart className="h-4 w-4 group-hover:scale-110 transition-transform" />
                 <span>Donate Now</span>

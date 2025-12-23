@@ -12,8 +12,8 @@ export const brandlogo: BrandLogo = {
   logo
 }
 
-export const homeBaanner:any = {
+export const homeBaanner = {
   zakat,
+  education,
   emergncy,
-  education
-}
+};
