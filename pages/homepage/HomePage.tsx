@@ -1,5 +1,7 @@
+
 import ActivitiesSection from '@/components/view/Activities/Activities'
 import Blog from '@/components/view/Blog/Blog'
+import Contact from '@/components/view/contact/Contact'
 import Gallery from '@/components/view/Gallery/Gallery'
 import GetInvolved from '@/components/view/GetInvolved/GetInvolved'
 import Hero from '@/components/view/Home/Hero/Hero'
@@ -14,6 +16,7 @@ export default function HomePage() {
             <GetInvolved />
             <Gallery />
             <Blog />
+            <Contact />
         </main>
     )
 }

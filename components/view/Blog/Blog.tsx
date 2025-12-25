@@ -115,7 +115,7 @@ export default function Blog() {
   };
 
   return (
-    <section className="relative py-20 lg:py-28 bg-gradient-to-b from-white via-emerald-50/5 to-white overflow-hidden">
+    <section className="relative py-10 bg-gradient-to-b from-white via-emerald-50/5 to-white overflow-hidden">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-20 left-1/4 w-96 h-96 bg-gradient-to-br from-blue-50/30 to-emerald-50/30 rounded-full blur-3xl" />
