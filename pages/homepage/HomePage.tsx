@@ -1,4 +1,6 @@
 import ActivitiesSection from '@/components/view/Activities/Activities'
+import Blog from '@/components/view/Blog/Blog'
+import Gallery from '@/components/view/Gallery/Gallery'
 import GetInvolved from '@/components/view/GetInvolved/GetInvolved'
 import Hero from '@/components/view/Home/Hero/Hero'
 import ServiceSection from '@/components/view/Home/ServiceSection/ServiceSection'
@@ -10,6 +12,8 @@ export default function HomePage() {
             <ServiceSection />
             <ActivitiesSection />
             <GetInvolved />
+            <Gallery />
+            <Blog />
         </main>
     )
 }
