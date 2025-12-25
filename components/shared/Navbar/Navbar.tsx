@@ -124,25 +124,25 @@ const Navbar = () => {
                 className="hidden sm:flex items-center gap-2 bg-primary hover:from-amber-600 text-white px-6 py-3 rounded-xl font-semibold shadow-lg"
               >
                 <Heart className="h-4 w-4 group-hover:scale-110 transition-transform" />
-                <span>Donate Now</span>
+                <span>দান করুন</span>
               </Link>
 
               {/* User Actions */}
               <div className="flex items-center gap-2">
                 
                 {/* Login Button */}
-                <Link
+                {/* <Link
                   href="/auth/signin"
                   className="hidden sm:flex items-center gap-2 bg-emerald-500 hover:bg-emerald-600 text-white px-4 py-2.5 rounded-xl font-medium shadow-sm hover:shadow transition-all duration-300 group"
                 >
                   <LogIn className="h-4 w-4 group-hover:scale-110 transition-transform" />
                   <span>Login</span>
-                </Link>
+                </Link> */}
 
                 {/* User Icon */}
                 <Link
                   href="/auth/signin"
-                  className="flex items-center justify-center w-12 h-12 bg-gradient-to-br from-emerald-100 to-green-100 hover:from-emerald-200 hover:to-green-200 border-2 border-emerald-200 rounded-xl shadow-sm hover:shadow transition-all duration-300 group relative overflow-hidden"
+                  className="hidden md:flex items-center justify-center w-12 h-12 bg-gradient-to-br from-emerald-100 to-green-100 hover:from-emerald-200 hover:to-green-200 border-2 border-emerald-200 rounded-xl shadow-sm hover:shadow transition-all duration-300 group relative overflow-hidden"
                   aria-label="User Account"
                 >
                   <User className="h-5 w-5 text-emerald-700 group-hover:scale-110 transition-transform" />

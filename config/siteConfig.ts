@@ -11,7 +11,7 @@ export const SiteConfig: SiteConfigType = {
   description: "An Nusra Foundation is a non-profit Islamic organization platform designed to support charity-based activities such as Zakat, Sadaqah, Emergency Aid, Education Funds, etc.",
   displayNumber: "+880 1817-536363",
   callLink: "tel:+01817536363",
-  whatsappLink: "https://wa.me/01817536363",
+  whatsappLink: "https://wa.me/8801817536363",
   location: "Dhaka, Bangladesh, 1207",
   city: "Dhaka",
   country: "Bangladesh",

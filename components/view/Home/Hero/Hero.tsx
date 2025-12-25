@@ -199,7 +199,7 @@ export default function Hero() {
     }, [emblaApi, onSelect]);
 
     return (
-        <section className="w-full overflow-hidden">
+        <section className="w-full overflow-hidden -mt-8">
             {/* ================= Carousel ================= */}
             <div
                 className="embla relative h-[65vh] md:h-[75vh]"
@@ -232,7 +232,7 @@ export default function Hero() {
             </div>
 
             {/* ================= Content ================= */}
-            <div className="w-full min-h-[500px] bg-gradient-to-r from-primary via-primary/80 to-green-900/90 py-14">
+            <div className="w-full min-h-[500px] bg-gradient-to-r from-green-900 via-primary/90 to-green-700 py-14">
                 <div className="container mx-auto px-4 sm:px-6 lg:px-8">
                     <div className="max-w-3xl -mt-4 md:mt-10">
                         {/* Badge */}
