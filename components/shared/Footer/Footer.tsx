@@ -17,7 +17,8 @@ export function Footer() {
   } = SiteConfig;
 
   return (
-    <footer className="bg-[#008E48] text-white relative overflow-hidden">
+    // bg-[#008E48]
+    <footer className="bg-primary text-white relative overflow-hidden">
       {/* <footer className="bg-gradient-to-b from-emerald-900 to-green-950 text-white relative overflow-hidden"> */}
       {/* Islamic Pattern Overlay */}
       <div className="absolute inset-0 opacity-5">

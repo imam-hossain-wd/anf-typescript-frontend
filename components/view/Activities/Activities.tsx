@@ -2,8 +2,9 @@
 import { BookOpen, Heart, TreePine, Home, Users, GraduationCap, Droplets, ShoppingBag, Shield, Leaf, Calendar, HandHeart } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
+import Image from 'next/image';
 
-// Map activity slugs to icons
+// Map activity slugs to icons and images
 const activityIcons: Record<string, any> = {
   'dawah-education': BookOpen,
   'emergency-relief': Shield,
@@ -18,94 +19,22 @@ const activityIcons: Record<string, any> = {
   'meritorious': Heart
 };
 
-// Color schemes for different activities
-const activityColors: Record<string, { 
-  gradient: string; 
-  bg: string; 
-  border: string;
-  text: string;
-  iconBg: string;
-}> = {
-  'dawah-education': {
-    gradient: 'from-blue-500 to-cyan-500',
-    bg: 'bg-blue-50',
-    border: 'border-blue-200',
-    text: 'text-blue-600',
-    iconBg: 'bg-blue-100'
-  },
-  'emergency-relief': {
-    gradient: 'from-red-500 to-orange-500',
-    bg: 'bg-red-50',
-    border: 'border-red-200',
-    text: 'text-red-600',
-    iconBg: 'bg-red-100'
-  },
-  'iftar': {
-    gradient: 'from-purple-500 to-pink-500',
-    bg: 'bg-purple-50',
-    border: 'border-purple-200',
-    text: 'text-purple-600',
-    iconBg: 'bg-purple-100'
-  },
-  'winter-relief': {
-    gradient: 'from-sky-500 to-blue-400',
-    bg: 'bg-sky-50',
-    border: 'border-sky-200',
-    text: 'text-sky-600',
-    iconBg: 'bg-sky-100'
-  },
-  'tree-plantation': {
-    gradient: 'from-emerald-500 to-green-500',
-    bg: 'bg-emerald-50',
-    border: 'border-emerald-200',
-    text: 'text-emerald-600',
-    iconBg: 'bg-emerald-100'
-  },
-  'skill-development-institute': {
-    gradient: 'from-amber-500 to-yellow-500',
-    bg: 'bg-amber-50',
-    border: 'border-amber-200',
-    text: 'text-amber-600',
-    iconBg: 'bg-amber-100'
-  },
-  'skill-based-entrepreneurship': {
-    gradient: 'from-indigo-500 to-purple-500',
-    bg: 'bg-indigo-50',
-    border: 'border-indigo-200',
-    text: 'text-indigo-600',
-    iconBg: 'bg-indigo-100'
-  },
-  'self-reliance': {
-    gradient: 'from-teal-500 to-cyan-400',
-    bg: 'bg-teal-50',
-    border: 'border-teal-200',
-    text: 'text-teal-600',
-    iconBg: 'bg-teal-100'
-  },
-  'safe-drinking-water': {
-    gradient: 'from-cyan-500 to-blue-400',
-    bg: 'bg-cyan-50',
-    border: 'border-cyan-200',
-    text: 'text-cyan-600',
-    iconBg: 'bg-cyan-100'
-  },
-  'qurbani': {
-    gradient: 'from-rose-500 to-pink-500',
-    bg: 'bg-rose-50',
-    border: 'border-rose-200',
-    text: 'text-rose-600',
-    iconBg: 'bg-rose-100'
-  },
-  'meritorious': {
-    gradient: 'from-violet-500 to-purple-400',
-    bg: 'bg-violet-50',
-    border: 'border-violet-200',
-    text: 'text-violet-600',
-    iconBg: 'bg-violet-100'
-  }
+// Activity images mapping
+const activityImages: Record<string, string> = {
+  'skill-development-institute': 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+  'emergency-relief': 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+  'skill-based-entrepreneurship': 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+  'self-reliance': 'https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+  'meritorious': 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+  'dawah-education': 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+  'tree-plantation': 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+  'qurbani': 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+  'iftar': 'https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+  'winter-relief': 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+  'safe-drinking-water': 'https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
 };
 
-// Activity data - in real app, this would come from your activities array
+// Activity data
 const activities = [
   {
     slug: 'skill-development-institute',
@@ -183,20 +112,20 @@ export default function ActivitiesSection() {
         {/* Gradient Orbs */}
         <div className="absolute top-20 -left-20 w-80 h-80 bg-gradient-to-br from-blue-100/30 to-transparent rounded-full blur-3xl" />
         <div className="absolute bottom-20 -right-20 w-80 h-80 bg-gradient-to-tr from-emerald-100/30 to-transparent rounded-full blur-3xl" />
-        
+
         {/* Grid Pattern */}
         <div className="absolute inset-0 bg-grid-pattern opacity-[0.03]" />
-        
+
         {/* Decorative Lines */}
         <div className="absolute top-40 left-10 right-10 h-px bg-gradient-to-r from-transparent via-emerald-200/50 to-transparent" />
         <div className="absolute bottom-40 left-10 right-10 h-px bg-gradient-to-r from-transparent via-blue-200/50 to-transparent" />
       </div>
 
-      <div className="container relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
+      <div className=" relative z-10 mx-auto px-4 sm:px-6 lg:px-8">
         {/* Section Header */}
-        <div className="text-center mb-20">
+        <div className="text-center mb-10">
           {/* Badge */}
-          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-50 to-green-50 rounded-2xl px-6 py-3 border border-emerald-200 mb-8">
+          <div className="inline-flex items-center gap-3 bg-gradient-to-r from-emerald-50 to-green-50 rounded-2xl px-6 py-3 border border-emerald-200 mb-4">
             <div className="w-2 h-2 bg-emerald-500 rounded-full animate-pulse" />
             <span className="text-emerald-700 font-semibold text-sm tracking-wide font-bangla">
               মানুষের সেবায় নিরলস
@@ -204,7 +133,7 @@ export default function ActivitiesSection() {
           </div>
 
           {/* Main Title */}
-          <h2 className="text-5xl md:text-6xl lg:text-7xl font-bold text-gray-900 mb-8 font-bangla leading-tight">
+          <h2 className="text-5xl font-bold text-gray-900 mb-8 font-bangla leading-tight">
             <span className="block pb-4 border-b-4 border-emerald-500/30 inline-block">
               চলমান
             </span>
@@ -214,80 +143,97 @@ export default function ActivitiesSection() {
           </h2>
 
           {/* Description */}
-          <p className="text-xl text-gray-600 max-w-3xl mx-auto font-bangla leading-relaxed">
-            মানুষের সার্বিক কল্যাণ ও সামাজিক উন্নয়নে আস-সুন্নাহ ফাউন্ডেশনের নানা রকম কার্যক্রম চলমান রয়েছে। 
+          <p className="text-lg text-gray-600 max-w-3xl mx-auto font-bangla leading-relaxed">
+            মানুষের সার্বিক কল্যাণ ও সামাজিক উন্নয়নে আস-সুন্নাহ ফাউন্ডেশনের নানা রকম কার্যক্রম চলমান রয়েছে।
             প্রতিটি কার্যক্রম পরিচালিত হয় স্বচ্ছতা, জবাবদিহিতা ও সর্বোচ্চ মানের নিশ্চয়তা নিয়ে।
           </p>
         </div>
 
         {/* Activities Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
           {activities.map((activity, index) => {
             const Icon = activityIcons[activity.slug] || Heart;
-            const colors = activityColors[activity.slug] || activityColors['dawah-education'];
-            
+            const imageUrl = activityImages[activity.slug] || 'https://images.unsplash.com/photo-1556655673-33c2d8ff0527?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
+
             return (
-              <Link 
-                key={activity.slug} 
+              <Link
+                key={activity.slug}
                 href={`/activities/${activity.slug}`}
                 className="group block"
               >
+                {/* Card Container */}
                 <div className={`
-                  relative h-full rounded-3xl overflow-hidden
-                  bg-white border-2 ${colors.border}
+                  relative h-full min-h-[350px] rounded-3xl overflow-hidden
+                  bg-white border-2 border-emerald-200
                   shadow-xl shadow-gray-200/50
                   transition-all duration-300 ease-in-out
                   hover:shadow-2xl hover:shadow-gray-300/50
                   hover:-translate-y-2
-                  ${colors.bg}
+                  bg-emerald-50 flex flex-col
                 `}>
-                  {/* Gradient Top Bar */}
-                  <div className={`h-1 w-full bg-gradient-to-r ${colors.gradient}`} />
-
-                  {/* Card Content */}
-                  <div className="p-8 h-full flex flex-col">
-                    {/* Icon and Tag */}
-                    <div className="flex items-start justify-between mb-8">
-                      <div className={`
-                        w-16 h-16 rounded-2xl flex items-center justify-center
-                        ${colors.iconBg} border-2 ${colors.border}
-                        group-hover:scale-110 transition-transform duration-300
-                      `}>
-                        <Icon className={`w-8 h-8 ${colors.text}`} />
-                      </div>
-                      
-                      {/* Activity Tag */}
+                  {/* Image Section */}
+                  <div className="relative h-48 flex-shrink-0 overflow-hidden rounded-t-3xl">
+                    <Image
+                      src={imageUrl}
+                      alt={activity.title}
+                      fill
+                      className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
+                    />
+                    
+                    {/* Image Overlay Gradient */}
+                    <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent" />
+                    
+                    {/* Tag on Image */}
+                    <div className="absolute top-4 right-4">
                       <span className={`
                         px-4 py-1.5 rounded-full text-xs font-semibold
-                        ${colors.bg} border ${colors.border} ${colors.text}
+                        bg-white/90 backdrop-blur-sm border border-emerald-200 text-emerald-700
                       `}>
                         {activity.tag}
                       </span>
                     </div>
+                    
+                    {/* Icon on Image */}
+                    <div className="absolute bottom-4 left-4">
+                      <div className={`
+                        w-12 h-12 rounded-xl flex items-center justify-center
+                        bg-white/90 backdrop-blur-sm border border-emerald-200
+                        group-hover:scale-110 transition-transform duration-300
+                      `}>
+                        <Icon className="w-6 h-6 text-emerald-600" />
+                      </div>
+                    </div>
+                  </div>
 
+                  {/* Gradient Top Bar */}
+                  <div className={`h-1 w-full bg-gradient-to-r from-emerald-500 to-green-500 flex-shrink-0`} />
+
+                  {/* Card Content - Flex column to push action indicator to bottom */}
+                  <div className="p-6 flex flex-col flex-grow">
                     {/* Title */}
                     <h3 className={`
-                      text-2xl font-bold text-gray-900 mb-4 font-bangla
-                      leading-tight group-hover:${colors.text} transition-colors duration-300
+                      text-xl font-bold text-gray-900 mb-3 font-bangla
+                      leading-tight group-hover:text-emerald-600 transition-colors duration-300
+                      line-clamp-2
                     `}>
                       {activity.title}
                     </h3>
 
                     {/* Description */}
-                    <p className="text-gray-700 leading-relaxed mb-8 flex-grow font-bangla text-lg">
+                    <p className="text-gray-700 leading-relaxed mb- font-bangla text-md line-clamp-3 flex-grow">
                       {activity.description}
                     </p>
 
-                    {/* Action Indicator */}
-                    <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-100">
-                      <span className={`text-sm font-semibold ${colors.text} font-bangla`}>
+                    {/* Action Indicator - This will now be at the bottom */}
+                    <div className="flex items-center justify-between  pt-4 border-t border-gray-100">
+                      <span className={`text-sm font-semibold text-emerald-600 font-bangla`}>
                         বিস্তারিত দেখুন
                       </span>
                       <div className={`
                         w-10 h-10 rounded-full flex items-center justify-center
-                        ${colors.iconBg} ${colors.text}
-                        group-hover:bg-gradient-to-r ${colors.gradient}
-                        group-hover:text-white transition-all duration-300
+                        bg-gradient-to-r from-emerald-500 to-green-500
+                        text-white group-hover:scale-110 transition-all duration-300
                       `}>
                         <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
@@ -297,19 +243,19 @@ export default function ActivitiesSection() {
                   </div>
 
                   {/* Corner Accents */}
-                  <div className={`absolute top-4 right-4 w-12 h-12 border-t-2 border-r-2 ${colors.border} rounded-tr-3xl`} />
-                  <div className={`absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 ${colors.border} rounded-bl-3xl`} />
+                  <div className={`absolute top-52 right-4 w-12 h-12 border-t-2 border-r-2 border-emerald-200 rounded-tr-3xl`} />
+                  <div className={`absolute bottom-4 left-4 w-12 h-12 border-b-2 border-l-2 border-emerald-200 rounded-bl-3xl`} />
 
                   {/* Hover Overlay */}
                   <div className={`
-                    absolute inset-0 rounded-3xl bg-gradient-to-br ${colors.gradient}
+                    absolute inset-0 rounded-3xl bg-gradient-to-br from-emerald-500 to-green-500
                     opacity-0 group-hover:opacity-5 transition-opacity duration-300 -z-10
                   `} />
                 </div>
 
                 {/* Background Glow on Hover */}
                 <div className={`
-                  absolute -inset-4 rounded-3xl bg-gradient-to-br ${colors.gradient}
+                  absolute -inset-4 rounded-3xl bg-gradient-to-br from-emerald-500 to-green-500
                   opacity-0 group-hover:opacity-10 blur-xl transition-opacity duration-300 -z-20
                 `} />
               </Link>
@@ -317,56 +263,18 @@ export default function ActivitiesSection() {
           })}
         </div>
 
-
         {/* CTA Section */}
-        <div className="text-center">
-          <div className="relative">
-            {/* Background Glow */}
-            <div className="absolute -inset-4 bg-gradient-to-r from-emerald-500 to-green-600 rounded-3xl blur-xl opacity-20" />
-            
-            {/* Main Container */}
-            <div className="relative bg-white rounded-3xl border-2 border-gray-100 p-12 shadow-2xl">
-              <h3 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-bangla">
-                সকল কার্যক্রম দেখুন
-              </h3>
-              
-              <div className="h-1 w-24 bg-gradient-to-r from-emerald-500 to-green-500 mx-auto mb-8 rounded-full" />
-              
-              <p className="text-xl text-gray-600 mb-12 max-w-2xl mx-auto font-bangla leading-relaxed">
-                প্রতিটি কার্যক্রমের বিস্তারিত বিবরণ, প্রভাব পরিসংখ্যান এবং অংশগ্রহণের সুযোগ সম্পর্কে জানতে 
-                আমাদের সকল কার্যক্রম দেখুন
-              </p>
-              
-              <Link href="/activities">
-                <Button
-                  size="lg"
-                  className="group bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-12 py-8 text-xl font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 font-bangla min-w-[280px]"
-                >
-                  <span>কার্যক্রমসমূহ</span>
-                  <svg className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
-                  </svg>
-                </Button>
-              </Link>
-              
-              {/* Trust Indicators */}
-              <div className="flex flex-wrap justify-center gap-8 mt-12 pt-12 border-t border-gray-200">
-                <div className="text-center">
-                  <div className="text-sm text-gray-500 font-bangla mb-2">১০০% স্বচ্ছতা</div>
-                  <div className="w-16 h-1 bg-emerald-500 rounded-full mx-auto" />
-                </div>
-                <div className="text-center">
-                  <div className="text-sm text-gray-500 font-bangla mb-2">সরকারি নিবন্ধিত</div>
-                  <div className="w-16 h-1 bg-emerald-500 rounded-full mx-auto" />
-                </div>
-                <div className="text-center">
-                  <div className="text-sm text-gray-500 font-bangla mb-2">আন্তর্জাতিক মান</div>
-                  <div className="w-16 h-1 bg-emerald-500 rounded-full mx-auto" />
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
+        <Link className='flex justify-center items-center' href="/activities">
+          <Button
+            size="lg"
+            className="group bg-gradient-to-r from-emerald-500 to-green-600 hover:from-emerald-600 hover:to-green-700 text-white px-12 py-7 text-xl font-semibold rounded-2xl shadow-xl hover:shadow-2xl transition-all duration-300 font-bangla min-w-[230px]"
+          >
+            <span>কার্যক্রমসমূহ</span>
+            <svg className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+            </svg>
+          </Button>
+        </Link>
       </div>
 
       {/* Custom CSS for Grid Pattern */}
@@ -386,6 +294,20 @@ export default function ActivitiesSection() {
         .animate-gradient {
           animation: gradient 3s ease infinite;
           background-size: 200% 200%;
+        }
+        
+        .line-clamp-2 {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 2;
+        }
+        
+        .line-clamp-3 {
+          overflow: hidden;
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 3;
         }
       `}</style>
     </section>

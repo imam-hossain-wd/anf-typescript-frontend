@@ -41,7 +41,7 @@
 //       {/* Background Elements */}
 //       <div className="absolute top-0 left-0 w-72 h-72 bg-emerald-200/20 rounded-full blur-3xl -translate-x-1/2 -translate-y-1/2"></div>
 //       <div className="absolute bottom-0 right-0 w-96 h-96 bg-amber-200/20 rounded-full blur-3xl translate-x-1/2 translate-y-1/2"></div>
-      
+
 //       <div className="container mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
 //         {/* Section Header */}
 //         <div className="text-center mb-16">
@@ -51,14 +51,14 @@
 //               উম্মাহর সেবায় নিবেদিত
 //             </span>
 //           </div>
-          
+
 //           <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 font-bangla leading-tight">
 //             উম্মাহর স্বার্থে,{' '}
 //             <span className="bg-gradient-to-r from-emerald-600 to-green-600 bg-clip-text text-transparent">
 //               সুন্নাহর সাথে
 //             </span>
 //           </h2>
-          
+
 //           <p className="text-xl text-gray-600 max-w-3xl mx-auto font-bangla leading-relaxed">
 //             ইসলামের সুমহান শিক্ষা ও মানবসেবার আলোকে আমরা পরিচালনা করি বহুমুখী কার্যক্রম, 
 //             যার মাধ্যমে প্রতিষ্ঠিত হয় সমাজের সার্বিক উন্নয়ন ও ইসলামের প্রচার-প্রসার
@@ -97,12 +97,12 @@
 //                     `}>
 //                       <Icon className={`w-8 h-8 ${service.iconColor}`} />
 //                     </div>
-                    
+
 //                     {/* Title */}
 //                     <h3 className="text-2xl font-bold text-white font-bangla mb-2">
 //                       {service.title}
 //                     </h3>
-                    
+
 //                     {/* Decorative Line */}
 //                     <div className="w-12 h-1 bg-white/50 rounded-full mb-4"></div>
 //                   </div>
@@ -154,7 +154,7 @@
 //             <p className="text-gray-600 mb-8 text-lg font-bangla">
 //               আপনার অংশগ্রহণ ও সমর্থন আমাদের কার্যক্রমকে আরও বিস্তৃত করতে সাহায্য করবে
 //             </p>
-            
+
 //             <div className="flex flex-col sm:flex-row gap-4 justify-center">
 //               <Button 
 //                 size="lg"
@@ -163,7 +163,7 @@
 //                 <span>আরও জানুন</span>
 //                 <ArrowRight className="w-5 h-5 ml-2 group-hover:translate-x-1 transition-transform" />
 //               </Button>
-              
+
 //               <Button 
 //                 variant="outline"
 //                 size="lg"
@@ -248,7 +248,7 @@ export default function ServiceSection() {
         <div className="absolute top-20 left-10 w-96 h-96 bg-gradient-to-br from-blue-100/40 to-transparent rounded-full blur-3xl" />
         <div className="absolute bottom-20 right-10 w-80 h-80 bg-gradient-to-tr from-amber-100/40 to-transparent rounded-full blur-3xl" />
         <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-gradient-to-r from-emerald-100/30 to-transparent rounded-full blur-3xl" />
-        
+
         {/* Grid Pattern */}
         <div className="absolute inset-0 bg-[linear-gradient(to_right,#0001_1px,transparent_1px),linear-gradient(to_bottom,#0001_1px,transparent_1px)] bg-[size:4rem_4rem] [mask-image:radial-gradient(ellipse_80%_80%_at_50%_50%,black,transparent)]" />
       </div>
@@ -281,17 +281,17 @@ export default function ServiceSection() {
           </h2>
 
           <p className="text-xl text-gray-600 max-w-3xl mx-auto font-bangla leading-relaxed">
-            ইসলামের সুমহান শিক্ষা ও মানবসেবার আলোকে আমরা পরিচালনা করি বহুমুখী কার্যক্রম, 
+            ইসলামের সুমহান শিক্ষা ও মানবসেবার আলোকে আমরা পরিচালনা করি বহুমুখী কার্যক্রম,
             যার মাধ্যমে প্রতিষ্ঠিত হয় সমাজের সার্বিক উন্নয়ন ও ইসলামের প্রচার-প্রসার
           </p>
         </div>
 
         {/* Interactive Cards Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10">
+        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-10 ">
           {services.map((service, index) => (
             <div
               key={service.id}
-              className="relative group"
+              className="relative group "
               onMouseEnter={() => setActiveCard(service.id)}
               onMouseLeave={() => setActiveCard(null)}
             >
@@ -299,14 +299,14 @@ export default function ServiceSection() {
               <div className={`
                 relative h-full rounded-3xl overflow-hidden
                 bg-white/80 backdrop-blur-xl
-                border border-gray-200/50
+                border border-primary
                 shadow-lg shadow-gray-200/50
                 transition-all duration-500 ease-out
                 ${activeCard === service.id ? 'scale-105 shadow-2xl shadow-emerald-200/30' : ''}
                 ${service.bgColor}
               `}>
                 {/* Animated Border */}
-                <div 
+                <div
                   className={`absolute inset-0 rounded-3xl p-[2px] transition-opacity duration-300 ${activeCard === service.id ? 'opacity-100' : 'opacity-0'}`}
                   style={{ background: service.gradient }}
                 >
@@ -316,14 +316,14 @@ export default function ServiceSection() {
                 {/* Card Content */}
                 <div className="relative p-8 h-full flex flex-col">
                   {/* Icon */}
-                  <div className="relative mb-6">
-                    <div 
-                      className={`w-20 h-20 rounded-2xl flex items-center justify-center mb-4 transition-transform duration-300 ${activeCard === service.id ? 'rotate-360' : ''}`}
+                  <div className="relative mb-">
+                    <div
+                      className={`w-16 h-16 rounded-2xl flex items-center justify-center mb-4 transition-transform duration-300 ${activeCard === service.id ? 'rotate-360' : ''}`}
                       style={{ background: service.gradient }}
                     >
                       <service.icon className="w-10 h-10 text-white" />
                     </div>
-                    
+
                     {/* Floating Badge */}
                     <div className="absolute top-0 right-0">
                       <div className={`px-3 py-1.5 rounded-full text-xs font-semibold ${service.borderColor.replace('border-', 'bg-').replace('/20', '/10')} border ${service.borderColor}`}>
@@ -338,16 +338,16 @@ export default function ServiceSection() {
                   </h3>
 
                   {/* Description */}
-                  <p className="text-gray-600 leading-relaxed mb-6 flex-grow font-bangla">
+                  <p className="text-gray-600 mb-2 leading-relaxed flex-grow font-bangla">
                     {service.description}
                   </p>
 
                   {/* Projects List */}
-                  <div className="space-y-3 mb-8">
+                  <div className="space-y-3 mb-4">
                     {service.projects.map((project, idx) => (
                       <div
                         key={idx}
-                        className={`flex items-center gap-2 transition-all duration-300 ${activeCard === service.id ? 'opacity-100 translate-x-0' : 'opacity-0 -translate-x-5'}`}
+                        className={`flex items-center gap-2 transition-all duration-300 opacity-100 translate-x-0`}
                         style={{ transitionDelay: `${idx * 100}ms` }}
                       >
                         <CheckCircle2 className={`w-4 h-4 ${service.borderColor.replace('border-', 'text-')}`} />
@@ -357,7 +357,7 @@ export default function ServiceSection() {
                   </div>
 
                   {/* Interactive Button */}
-                  <div className={`mt-auto transition-transform duration-300 ${activeCard === service.id ? 'translate-y-0' : 'translate-y-2'}`}>
+                  {/* <div className={`mt-auto transition-transform duration-300 ${activeCard === service.id ? 'translate-y-0' : 'translate-y-2'}`}>
                     <Button
                       variant="ghost"
                       className={`w-full justify-between group/btn ${service.borderColor.replace('border-', 'hover:bg-').replace('/20', '/10')}`}
@@ -367,11 +367,27 @@ export default function ServiceSection() {
                         <ArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                       </div>
                     </Button>
+                  </div> */}
+
+                  <div className="flex items-center justify-between mt-auto pt-6 border-t border-gray-100">
+                    <span className={`text-sm font-semibold text-emerald-600 font-bangla`}>
+                      বিস্তারিত দেখুন
+                    </span>
+                    <div className={`
+                        w-10 h-10 rounded-full flex items-center justify-center
+                    
+                        bg-gradient-to-r from-emerald-500 to-green-500
+                        text-white transition-all duration-300
+                      `}>
+                      <svg className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
+                      </svg>
+                    </div>
                   </div>
                 </div>
 
                 {/* Hover Glow Effect */}
-                <div 
+                <div
                   className={`absolute inset-0 rounded-3xl blur-xl transition-opacity duration-300 ${activeCard === service.id ? 'opacity-30' : 'opacity-0'}`}
                   style={{ background: service.gradient }}
                 />
@@ -384,7 +400,7 @@ export default function ServiceSection() {
                     <div
                       key={i}
                       className="absolute w-2 h-2 rounded-full"
-                      style={{ 
+                      style={{
                         background: service.gradient.split(' ')[2],
                         animationDelay: `${i * 100}ms`
                       }}
@@ -432,7 +448,7 @@ export default function ServiceSection() {
               <p className="text-xl text-gray-600 mb-10 max-w-2xl mx-auto font-bangla">
                 আপনার সমর্থন ও অংশগ্রহণ আমাদের কার্যক্রমকে আরও বিস্তৃত করে উম্মাহর সার্বিক কল্যাণে ভূমিকা রাখতে সাহায্য করবে
               </p>
-              
+
               <div className="flex flex-col sm:flex-row gap-4 justify-center">
                 <div className="transition-transform duration-300 hover:scale-105 active:scale-95">
                   <Button
@@ -443,7 +459,7 @@ export default function ServiceSection() {
                     <ArrowRight className="w-6 h-6 ml-3 group-hover:translate-x-2 transition-transform" />
                   </Button>
                 </div>
-                
+
                 <div className="transition-transform duration-300 hover:scale-105 active:scale-95">
                   <Button
                     variant="outline"
