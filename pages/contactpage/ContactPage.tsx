@@ -1,8 +1,14 @@
+import ContactForm from "@/components/view/ContactUs/ContactForm";
+import ContactHero from "@/components/view/ContactUs/ContactHero";
 
-import React from 'react'
+
 
 export default function ContactPage() {
   return (
-    <div>ContactPage</div>
+    <div>
+      <ContactHero />
+      <ContactForm />
+
+    </div>
   )
 }
