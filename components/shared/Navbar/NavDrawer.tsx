@@ -38,7 +38,7 @@ export default function NavDrawer() {
                         className="relative hover:bg-transparent group"
                     >
                         {/* Menu Button with Hover Effect */}
-                        <div className="relative w-10 h-10 p-2 rounded bg-primary flex items-center justify-center border border-emerald-100 group-hover:border-emerald-200 transition-all duration-300">
+                        <div className="relative w-10 h-10 p-2 rounded bg-primary flex items-center justify-center border border-emerald-100 group-hover:border-emerald-200 hover:bg-white hover:text-primary hover:border transition-all duration-300">
                             <Menu className="h-6 w-6 text-white group-hover:text-emerald-700 transition-colors duration-300" />
                         </div>
                     </Button>

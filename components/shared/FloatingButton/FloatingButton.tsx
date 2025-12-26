@@ -42,7 +42,7 @@ export function FloatingActionButton() {
   };
 
   return (
-    <div className="fixed right-5 bottom-40 z-50 flex flex-col items-center gap-4">
+    <div className="fixed right-5 bottom-40 md:bottom-20 z-50 flex flex-col items-center gap-4">
       {/* Static Social Media Icons - Always Visible */}
       <div className="flex flex-col gap-3">
         {socialLinks.map((social, index) => {
@@ -82,7 +82,7 @@ export function FloatingActionButton() {
       `}>
         <button
           onClick={scrollToTop}
-          className="
+          className=" mt-20
             w-10 h-10 rounded-xl flex items-center justify-center
             bg-primary text-white shadow-lg hover:shadow-xl
             transition-all duration-300 hover:scale-110
@@ -91,7 +91,7 @@ export function FloatingActionButton() {
           "
           aria-label="Scroll to top"
         >
-          <ChevronUp className="h-5 w-5" />
+          <ChevronUp className="h-5 w-5 " />
         </button>
       </div>
     </div>
