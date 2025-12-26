@@ -35,7 +35,12 @@ export interface SiteConfigType {
   city: string;
   country: string;
 
-  navItems: NavItem[];
+  /** ✅ FIXED */
+  navItems: {
+    en: NavItem[];
+    bn: NavItem[];
+  };
+
   footerhrefs: FooterLink[];
   socialLinks: SocialLink[];
   contactLinks: ContactLink[];

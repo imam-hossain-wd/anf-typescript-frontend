@@ -54,7 +54,7 @@ const impactStories = [
 
 export default function TransparencySection() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-10 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
@@ -100,7 +100,7 @@ export default function TransparencySection() {
           {/* Impact Stories */}
           <div className="bg-gradient-to-br from-gray-50 to-white rounded-3xl border border-gray-200 p-8">
             <div className="flex items-center gap-3 mb-8">
-              <Target className="w-6 h-6 text-rose-600" />
+              <Target className="w-6 h-6 text-primary" />
               <h3 className="text-xl font-bold text-gray-900 font-bangla">
                 আমাদের প্রভাবের গল্প
               </h3>
@@ -137,7 +137,7 @@ export default function TransparencySection() {
           </div>
 
           {/* Annual Report */}
-          <div className="mt-12 bg-gradient-to-r from-rose-50 to-pink-50 rounded-3xl p-8 border border-rose-100">
+          <div className="mt-12 bg-primary/10 rounded-3xl p-8 border border-primary/70">
             <div className="grid lg:grid-cols-2 gap-8 items-center">
               <div>
                 <h3 className="text-2xl font-bold text-gray-900 mb-4 font-bangla">
@@ -148,11 +148,11 @@ export default function TransparencySection() {
                 </p>
                 
                 <div className="flex flex-wrap gap-4">
-                  <button className="bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:shadow-lg font-bangla">
+                  <button className="bg-primary hover:from-rose-600 hover:to-pink-700 text-white font-semibold px-6 py-3 rounded-xl transition-all duration-300 hover:shadow-lg font-bangla">
                     প্রতিবেদন ডাউনলোড
                   </button>
                   
-                  <button className="bg-white text-rose-600 font-semibold px-6 py-3 rounded-xl border border-rose-200 hover:bg-rose-50 transition-all duration-300 font-bangla">
+                  <button className="bg-white text-primary font-semibold px-6 py-3 rounded-xl border border-primary/60 hover:bg-primary/10 transition-all duration-300 font-bangla">
                     আর্থিক প্রতিবেদন
                   </button>
                 </div>
@@ -161,7 +161,7 @@ export default function TransparencySection() {
               <div className="flex justify-center">
                 <div className="relative">
                   <div className="w-48 h-64 bg-gradient-to-br from-white to-gray-50 rounded-xl shadow-lg border border-gray-200 flex flex-col items-center justify-center p-6">
-                    <Receipt className="w-16 h-16 text-rose-400 mb-4" />
+                    <Receipt className="w-16 h-16 text-primary mb-4" />
                     <div className="text-center">
                       <div className="font-bold text-gray-900 mb-2 font-bangla">
                         ২০২৪ প্রতিবেদন

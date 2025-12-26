@@ -1,10 +1,21 @@
 'use client'
-import { BookOpen, Heart, TreePine, Home, Users, GraduationCap, Droplets, ShoppingBag, Shield, Leaf, Calendar, HandHeart } from 'lucide-react';
+import { BookOpen, Heart, TreePine, Home, Users, GraduationCap, Droplets, ShoppingBag, Shield, Leaf, Calendar, HandHeart, LucideIcon } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 import Image from 'next/image';
 
 // Map activity slugs to icons and images
+
+
+type Activity = {
+  slug: string
+  title: string
+  description: string
+  tag: string
+  image: string
+  icon: LucideIcon
+}
+
 const activityIcons: Record<string, any> = {
   'dawah-education': BookOpen,
   'emergency-relief': Shield,
@@ -19,90 +30,88 @@ const activityIcons: Record<string, any> = {
   'meritorious': Heart
 };
 
-// Activity images mapping
-const activityImages: Record<string, string> = {
-  'skill-development-institute': 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  'emergency-relief': 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  'skill-based-entrepreneurship': 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  'self-reliance': 'https://images.unsplash.com/photo-1573164713988-8665fc963095?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  'meritorious': 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  'dawah-education': 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  'tree-plantation': 'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  'qurbani': 'https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  'iftar': 'https://images.unsplash.com/photo-1562322140-8baeececf3df?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  'winter-relief': 'https://images.unsplash.com/photo-1544027993-37dbfe43562a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
-  'safe-drinking-water': 'https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-};
-
-// Activity data
-const activities = [
+const activities: Activity[] = [
   {
     slug: 'skill-development-institute',
     title: 'আস-সুন্নাহ স্কিল ডেভেলপমেন্ট ইনস্টিটিউট',
-    description: 'জাতীয় দক্ষতা উন্নয়ন কর্তৃপক্ষ কর্তৃক নিবন্ধিত একটি আত্ম-উন্নয়ন ও দক্ষতা বৃদ্ধিমূলক প্রতিষ্ঠান।',
-    tag: 'নিয়মিত কার্যক্রম'
+    description:
+      'জাতীয় দক্ষতা উন্নয়ন কর্তৃপক্ষ কর্তৃক নিবন্ধিত একটি আত্ম-উন্নয়ন ও দক্ষতা বৃদ্ধিমূলক প্রতিষ্ঠান।',
+    tag: 'নিয়মিত কার্যক্রম',
+    image:
+      'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=800&q=80',
+    icon: GraduationCap
   },
   {
     slug: 'emergency-relief',
     title: 'দুর্যোগে ত্রাণ ও পুনর্বাসন',
-    description: 'বন্যা, ঘূর্ণিঝড়, অগ্নিকাণ্ড—প্রতিটি দুর্যোগে অসহায় মানুষের পাশে আছে আস-সুন্নাহ ফাউন্ডেশন।',
-    tag: 'নিয়মিত কার্যক্রম'
+    description:
+      'বন্যা, ঘূর্ণিঝড়, অগ্নিকাণ্ড—প্রতিটি দুর্যোগে অসহায় মানুষের পাশে আছে আস-সুন্নাহ ফাউন্ডেশন।',
+    tag: 'নিয়মিত কার্যক্রম',
+    image:
+      'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=800&q=80',
+    icon: Shield
   },
-  {
-    slug: 'skill-based-entrepreneurship',
-    title: 'দক্ষতাভিত্তিক উদ্যোক্তা তৈরি',
-    description: 'দক্ষতা থাকা সত্ত্বেও শুধু পুঁজির অভাবে যারা উদ্যোগ নিতে পারছেন না, তাদের পাশে দাঁড়ানোর একটি মানবিক প্রয়াস।',
-    tag: 'নিয়মিত কার্যক্রম'
-  },
-  {
-    slug: 'self-reliance',
-    title: 'স্বাবলম্বীকরণ',
-    description: 'এই কার্যক্রমের আওতায় কর্মক্ষম দরিদ্রদের উপার্জন উপকরণ দেয়া হয়।',
-    tag: 'নিয়মিত কার্যক্রম'
-  },
-  {
-    slug: 'meritorious',
-    title: 'মেধাবী কার্যক্রম',
-    description: 'সৎ, দক্ষ ও মানবিক মূল্যবোধসম্পন্ন প্রজন্ম বিনির্মাণের প্রয়াস।',
-    tag: 'নিয়মিত কার্যক্রম'
-  },
-  {
-    slug: 'dawah-education',
-    title: 'দাওয়াহ কার্যক্রম',
-    description: 'বিশুদ্ধ জ্ঞান ছড়িয়ে দিয়ে ইসলামী চেতনায় উজ্জীবিত করতে আস-সুন্নাহ ফাউন্ডেশনের দাওয়াহমূলক উদ্যোগ।',
-    tag: 'নিয়মিত কার্যক্রম'
-  },
+  { slug: 'skill-based-entrepreneurship', title: 'দক্ষতাভিত্তিক উদ্যোক্তা তৈরি', description: 'দক্ষতা থাকা সত্ত্বেও শুধু পুঁজির অভাবে যারা উদ্যোগ নিতে পারছেন না, তাদের পাশে দাঁড়ানোর একটি মানবিক প্রয়াস।', tag: 'নিয়মিত কার্যক্রম', image: 'https://images.unsplash.com/photo-1582213782179-e0d53f98f2ca?auto=format&fit=crop&w=800&q=80', icon: ShoppingBag },
+
+  { slug: 'self-reliance', title: 'স্বাবলম্বীকরণ', description: 'এই কার্যক্রমের আওতায় কর্মক্ষম দরিদ্রদের উপার্জন উপকরণ দেয়া হয়।', tag: 'নিয়মিত কার্যক্রম', image: 'https://images.unsplash.com/photo-1573164713988-8665fc963095?auto=format&fit=crop&w=800&q=80', icon: Users },
+
+  { slug: 'meritorious', title: 'মেধাবী কার্যক্রম', description: 'সৎ, দক্ষ ও মানবিক মূল্যবোধসম্পন্ন প্রজন্ম বিনির্মাণের প্রয়াস।', tag: 'নিয়মিত কার্যক্রম', image: 'https://images.unsplash.com/photo-1503676260728-1c00da094a0b?auto=format&fit=crop&w=800&q=80', icon: Heart },
+
+  { slug: 'dawah-education', title: 'দাওয়াহ কার্যক্রম', description: 'বিশুদ্ধ জ্ঞান ছড়িয়ে দিয়ে ইসলামী চেতনায় উজ্জীবিত করতে আস-সুন্নাহ ফাউন্ডেশনের দাওয়াহমূলক উদ্যোগ।', tag: 'নিয়মিত কার্যক্রম', image: 'https://images.unsplash.com/photo-1516321318423-f06f85e504b3?auto=format&fit=crop&w=800&q=80', icon: BookOpen },
+
   {
     slug: 'tree-plantation',
     title: 'বৃক্ষরোপণ',
-    description: 'গাছ লাগিয়ে সবুজ পৃথিবী গড়ার এই মহতী উদ্যোগে শামিল হতে পারেন আপনিও।',
-    tag: 'নিয়মিত কার্যক্রম'
+    description:
+      'গাছ লাগিয়ে সবুজ পৃথিবী গড়ার এই মহতী উদ্যোগে শামিল হতে পারেন আপনিও।',
+    tag: 'নিয়মিত কার্যক্রম',
+    image:
+      'https://images.unsplash.com/photo-1542601906990-b4d3fb778b09?auto=format&fit=crop&w=800&q=80',
+    icon: TreePine
   },
   {
     slug: 'qurbani',
     title: 'সবার জন্য কুরবানী',
-    description: 'প্রান্তিক মানুষের আমিষের ঘাটতি পূরণ, ঈদের হাসি ছড়িয়ে দেয়া এবং সর্বোপরি আল্লাহর সন্তুষ্টির জন্য একটি কুরবানী করতে পারেন।',
-    tag: 'নিয়মিত কার্যক্রম'
+    description:
+      'প্রান্তিক মানুষের আমিষের ঘাটতি পূরণ, ঈদের হাসি ছড়িয়ে দেয়া এবং সর্বোপরি আল্লাহর সন্তুষ্টির জন্য একটি কুরবানী করতে পারেন।',
+    tag: 'নিয়মিত কার্যক্রম',
+    image:
+      'https://images.unsplash.com/photo-1578662996442-48f60103fc96?auto=format&fit=crop&w=800&q=80',
+    icon: HandHeart
   },
   {
     slug: 'iftar',
     title: 'ইফতার বিতরণ',
-    description: 'আপনার সহযোগিতায় আমরা দুস্থ রোযাদারদের জন্য ইফতার আয়োজন করি। আমাদের এই কল্যাণকর্মে আপনিও শরিক হোন।',
-    tag: 'নিয়মিত কার্যক্রম'
+    description:
+      'আপনার সহযোগিতায় আমরা দুস্থ রোযাদারদের জন্য ইফতার আয়োজন করি। আমাদের এই কল্যাণকর্মে আপনিও শরিক হোন।',
+    tag: 'নিয়মিত কার্যক্রম',
+    image:
+      'https://images.unsplash.com/photo-1562322140-8baeececf3df?auto=format&fit=crop&w=800&q=80',
+    icon: Calendar
   },
   {
     slug: 'winter-relief',
     title: 'শীতবস্ত্র বিতরণ',
-    description: 'দরিদ্র মানুষের শরীরে উষ্ণতা ছড়িয়ে দিতে আমাদের আন্তরিক প্রয়াস।',
-    tag: 'নিয়মিত কার্যক্রম'
+    description:
+      'দরিদ্র মানুষের শরীরে উষ্ণতা ছড়িয়ে দিতে আমাদের আন্তরিক প্রয়াস।',
+    tag: 'নিয়মিত কার্যক্রম',
+    image:
+      'https://images.unsplash.com/photo-1544027993-37dbfe43562a?auto=format&fit=crop&w=800&q=80',
+    icon: Home
   },
   {
     slug: 'safe-drinking-water',
     title: 'নলকূপ ও পানি শোধনাগার স্থাপন',
-    description: 'আপনাদের সহযোগিতায় আমরা দরিদ্র মানুষের জন্য বিশুদ্ধ পানীয় জল নিশ্চিত করছি। এই মানবিক উদ্যোগে আপনিও অংশ নিন।',
-    tag: 'নিয়মিত কার্যক্রম'
+    description:
+      'আপনাদের সহযোগিতায় আমরা দরিদ্র মানুষের জন্য বিশুদ্ধ পানীয় জল নিশ্চিত করছি। এই মানবিক উদ্যোগে আপনিও অংশ নিন।',
+    tag: 'নিয়মিত কার্যক্রম',
+    image:
+      'https://images.unsplash.com/photo-1567225557594-88d73e55f2cb?auto=format&fit=crop&w=800&q=80',
+    icon: Droplets
   }
-];
+]
+
+
 
 export default function ActivitiesSection() {
   return (
@@ -151,9 +160,8 @@ export default function ActivitiesSection() {
 
         {/* Activities Grid */}
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-4 mb-10">
-          {activities.map((activity, index) => {
-            const Icon = activityIcons[activity.slug] || Heart;
-            const imageUrl = activityImages[activity.slug] || 'https://images.unsplash.com/photo-1556655673-33c2d8ff0527?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80';
+          {activities.map((activity) => {
+            const Icon = activity.icon || Heart;
 
             return (
               <Link
@@ -174,16 +182,16 @@ export default function ActivitiesSection() {
                   {/* Image Section */}
                   <div className="relative h-48 flex-shrink-0 overflow-hidden rounded-t-3xl">
                     <Image
-                      src={imageUrl}
+                      src={activity?.image}
                       alt={activity.title}
                       fill
                       className="object-cover group-hover:scale-105 transition-transform duration-500"
                       sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 33vw"
                     />
-                    
+
                     {/* Image Overlay Gradient */}
                     <div className="absolute inset-0 bg-gradient-to-t from-emerald-900/40 to-transparent" />
-                    
+
                     {/* Tag on Image */}
                     <div className="absolute top-4 right-4">
                       <span className={`
@@ -193,7 +201,7 @@ export default function ActivitiesSection() {
                         {activity.tag}
                       </span>
                     </div>
-                    
+
                     {/* Icon on Image */}
                     <div className="absolute bottom-4 left-4">
                       <div className={`

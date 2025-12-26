@@ -92,20 +92,20 @@ export default function DonationCategories() {
   const selectedCat = categories.find(cat => cat.id === selectedCategory);
 
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-4 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
-            <div className="inline-flex items-center gap-2 bg-gradient-to-r from-rose-50 to-pink-50 rounded-full px-4 py-2 mb-6 border border-rose-100">
-              <div className="w-2 h-2 bg-gradient-to-r from-rose-500 to-pink-500 rounded-full" />
-              <span className="text-rose-700 font-semibold text-sm font-bangla">
+            <div className="inline-flex items-center gap-2 bg-primary/10 rounded-full px-4 py-2 mb-6 border border-primary">
+              <div className="w-2 h-2 bg-primary rounded-full" />
+              <span className="text-primary font-semibold text-sm font-bangla">
                 আপনার পছন্দের খাত
               </span>
             </div>
             
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-bangla">
-              <span className="bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">
+              <span className="bg-primary bg-clip-text text-transparent">
                 দানের খাত সমূহ
               </span>
             </h2>
@@ -222,14 +222,14 @@ export default function DonationCategories() {
                         <button className="bg-white border border-gray-300 rounded-xl py-3 font-semibold text-gray-900 hover:border-rose-300 hover:bg-rose-50 transition-all duration-300 font-bangla">
                           {selectedCat.amount}
                         </button>
-                        <button className="col-span-2 bg-gradient-to-r from-rose-50 to-pink-50 border border-rose-200 rounded-xl py-3 font-semibold text-rose-700 hover:border-rose-300 transition-all duration-300 font-bangla">
+                        <button className="col-span-2 bg-primary/10 border border-primary rounded-xl py-3 font-semibold text-primary hover:border-rose-300 transition-all duration-300 font-bangla">
                           কাস্টম অ্যামাউন্ট
                         </button>
                       </div>
                     </div>
 
                     {/* CTA Button */}
-                    <button className="w-full bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-white font-semibold py-4 rounded-xl transition-all duration-300 hover:shadow-lg font-bangla">
+                    <button className="w-full bg-primary hover:from-rose-600 hover:to-pink-700 text-white font-semibold py-4 rounded-xl transition-all duration-300 hover:shadow-lg font-bangla">
                       এই খাতে দান করুন
                     </button>
                   </>

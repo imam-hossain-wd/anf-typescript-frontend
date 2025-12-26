@@ -8,6 +8,7 @@ import { brandlogo } from "@/utils/assets";
 import Image from "next/image";
 import { SiteConfig } from "@/config/siteConfig";
 import NavDrawer from "./NavDrawer";
+import { NavItem } from "@/types/siteConfigType";
 
 const { email, location, socialLinks, navItems, callLink, displayNumber } = SiteConfig;
 
@@ -57,7 +58,7 @@ const Navbar = () => {
           </div>
           
           <div className="flex items-center gap-4">
-            {socialLinks.map((social) => (
+            {socialLinks.map((social:any) => (
               <Link
                 key={social.name}
                 href={social.href}
@@ -94,7 +95,7 @@ const Navbar = () => {
 
             {/* Desktop Navigation */}
             <nav className="hidden lg:flex items-center gap-1 mx-8">
-              {navItems.map((item) => (
+              {navItems?.bn.map((item:NavItem) => (
                 <Link
                   key={item.href}
                   href={item.href}

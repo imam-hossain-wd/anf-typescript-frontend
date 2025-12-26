@@ -10,6 +10,7 @@ import Image from "next/image";
 import { Menu, ChevronRight, Home, Heart, Users, BookOpen, MessageCircle, Phone, MapPin, Info } from "lucide-react";
 import { brandlogo} from "@/utils/assets";
 import { SiteConfig } from "@/config/siteConfig";
+import { NavItem } from "@/types/siteConfigType";
 
 // Map nav items to icons
 const navIcons: Record<string, any> = {
@@ -60,7 +61,7 @@ export default function NavDrawer() {
                     {/* Navigation Items */}
                     <div className="flex-1 overflow-y-auto py-3 border-t border-primary">
                         <nav className="space-y-1 px-4">
-                            {SiteConfig.navItems.map((item, index) => {
+                            {SiteConfig.navItems?.bn?.map((item:NavItem, index:any) => {
                                 const Icon = navIcons[item.name] || ChevronRight;
                                 const isActive = pathname === item.href;
 

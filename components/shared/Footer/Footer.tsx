@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { Facebook, Instagram, Twitter, Youtube, MapPin, Phone, Mail, Heart, Shield, Users, BookOpen } from "lucide-react";
 import { SiteConfig } from "@/config/siteConfig";
+import { NavItem } from "@/types/siteConfigType";
 
 
 
@@ -114,7 +115,7 @@ export function Footer() {
               Quick Links
             </h3>
             <nav className="grid grid-cols-1 gap-3">
-              {navItems.map((item, index) => (
+              {navItems?.bn.map((item:NavItem, index:number) => (
                 <Link
                   key={index}
                   href={item.href}
@@ -186,7 +187,7 @@ export function Footer() {
             <div className="space-y-4">
               <h4 className="font-semibold text-white">Follow Our Journey</h4>
               <div className="flex gap-3">
-                {socialLinks.map(({ name, icon: Icon, href }) => (
+                {socialLinks.map(({ name, icon: Icon, href }:any) => (
                   <Link
                     key={name}
                     href={href}

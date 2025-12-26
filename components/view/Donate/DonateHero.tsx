@@ -10,21 +10,7 @@ export default function DonateHero() {
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-64 h-64 bg-rose-100/30 rounded-full blur-3xl" />
         <div className="absolute bottom-0 left-0 w-80 h-80 bg-pink-100/20 rounded-full blur-3xl" />
-        
-        {/* Floating Hearts */}
-        {[...Array(3)].map((_, i) => (
-          <div
-            key={i}
-            className="absolute text-rose-200/30"
-            style={{
-              top: `${20 + i * 20}%`,
-              left: `${10 + i * 25}%`,
-              fontSize: '2rem'
-            }}
-          >
-            ❤️
-          </div>
-        ))}
+
       </div>
 
       <div className="relative container mx-auto px-4 sm:px-6 lg:px-8">
@@ -32,13 +18,13 @@ export default function DonateHero() {
           {/* Badge */}
           <div className="inline-flex items-center gap-3 bg-white rounded-2xl px-5 py-3 border border-rose-100 shadow-sm mb-8">
             <div className="flex items-center gap-2">
-              <Sparkles className="w-4 h-4 text-rose-600" />
-              <span className="text-rose-700 font-semibold text-sm font-bangla">
+              <Sparkles className="w-4 h-4 text-primary" />
+              <span className="text-primary font-semibold text-sm font-bangla">
                 সাদাকাহে জারিয়াহ
               </span>
             </div>
-            <div className="w-1 h-1 bg-rose-300 rounded-full" />
-            <div className="text-rose-600 text-sm font-bangla">
+            <div className="w-1 h-1 bg-primary/70 rounded-full" />
+            <div className="text-primary text-sm font-bangla">
               চলমান নেকি
             </div>
           </div>
@@ -50,10 +36,10 @@ export default function DonateHero() {
               <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 font-bangla leading-tight">
                 <span className="block mb-3">মানবতার সেবায়</span>
                 <span className="relative inline-block">
-                  <span className="bg-gradient-to-r from-rose-600 via-pink-600 to-rose-600 bg-clip-text text-transparent">
+                  <span className="bg-primary bg-clip-text text-transparent">
                     আপনার দান
                   </span>
-                  <div className="absolute -bottom-2 left-0 right-0 h-1 bg-gradient-to-r from-rose-400 via-pink-400 to-rose-400 rounded-full" />
+                  <div className="absolute -bottom-2 left-0 right-0 h-1 bg-primary rounded-full" />
                 </span>
               </h1>
               
@@ -65,8 +51,8 @@ export default function DonateHero() {
               <div className="grid grid-cols-3 gap-4 mb-8">
                 {[
                   { value: '১০০%', label: 'সঠিক ব্যবহার', color: 'bg-emerald-500' },
-                  { value: '৫০,০০০+', label: 'সেবাপ্রাপ্ত', color: 'bg-rose-500' },
-                  { value: '১০০%', label: 'স্বচ্ছতা', color: 'bg-blue-500' }
+                  { value: '৫০,০০০+', label: 'সেবাপ্রাপ্ত', color: 'bg-emerald-500' },
+                  { value: '১০০%', label: 'স্বচ্ছতা', color: 'bg-emerald-500' }
                 ].map((stat, idx) => (
                   <div key={idx} className="bg-white rounded-xl p-4 border border-gray-100">
                     <div className="flex items-center gap-2 mb-2">
@@ -86,7 +72,7 @@ export default function DonateHero() {
               <div className="flex flex-wrap gap-4">
                 <Button
                   size="lg"
-                  className="group bg-gradient-to-r from-rose-500 to-pink-600 hover:from-rose-600 hover:to-pink-700 text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-bangla"
+                  className="group bg-primary text-white px-8 py-6 text-lg font-semibold rounded-xl shadow-lg hover:shadow-xl transition-all duration-300 font-bangla"
                 >
                   <Heart className="w-6 h-6 mr-3" />
                   দান করুন এখনই
@@ -95,7 +81,7 @@ export default function DonateHero() {
                 <Button
                   variant="outline"
                   size="lg"
-                  className="border-2 border-rose-500 text-rose-600 hover:bg-rose-50 px-8 py-6 text-lg font-semibold rounded-xl transition-all duration-300 font-bangla"
+                  className="border-2 border-primary text-primary hover:bg-primary/90 px-8 py-6 text-lg font-semibold rounded-xl transition-all duration-300 font-bangla hover:text-white"
                 >
                   <Shield className="w-6 h-6 mr-3" />
                   নীতিমালা দেখুন
@@ -105,7 +91,7 @@ export default function DonateHero() {
 
             {/* Right Column - Visual */}
             <div className="relative">
-              <div className="bg-gradient-to-br from-rose-500 to-pink-600 rounded-3xl p-8 shadow-2xl">
+              <div className="bg-primary rounded-3xl p-8 shadow-2xl">
                 <div className="text-center text-white">
                   <div className="inline-flex items-center justify-center w-20 h-20 bg-white/20 rounded-full mb-6">
                     <Target className="w-10 h-10 text-white" />

@@ -3,7 +3,7 @@ import { SiteConfigType } from "@/types/siteConfigType";
 import { Facebook, Instagram, Mail, MapPin, Phone, Twitter, Youtube } from "lucide-react";
 
 
-export const SiteConfig: SiteConfigType = {
+export const SiteConfig: any = {
   authorName: "Abul Kashem Fazlul Haque",
   brandName: "As Nusra Foundation",
   url: "https://annusrafoundation.com",
@@ -15,7 +15,17 @@ export const SiteConfig: SiteConfigType = {
   location: "Dhaka, Bangladesh, 1207",
   city: "Dhaka",
   country: "Bangladesh",
-  navItems: [
+  // navItems: [
+  //   { name: "Home", href: "/" },
+  //   { name: "Activities", href: "/activities" },
+  //   { name: "Programs", href: "/programs" },
+  //   { name: "About", href: "/about" },
+  //   { name: "Contact", href: "/contact" },
+  //   { name: "Blog", href: "/blog" },
+  //   { name: "Donate", href: "/donate" }
+  // ],
+  navItems: {
+    en:[
     { name: "Home", href: "/" },
     { name: "Activities", href: "/activities" },
     { name: "Programs", href: "/programs" },
@@ -24,6 +34,16 @@ export const SiteConfig: SiteConfigType = {
     { name: "Blog", href: "/blog" },
     { name: "Donate", href: "/donate" }
   ],
+  bn:[
+    { name: "হোম", href: "/" },
+    { name: "কার্যক্রমসমূহ", href: "/activities" },
+    { name: "প্রোগাম", href: "/programs" },
+    { name: "আমাদের সম্পর্কে", href: "/about" },
+    { name: "যোগাযোগ", href: "/contact" },
+    { name: "ব্লগ", href: "/blog" },
+    { name: "দান করুণ", href: "/donate" }
+  ]
+  },
   footerhrefs: [
     { title: "About Us", href: "/about" },
     { title: "Contact", href: "/contact" },

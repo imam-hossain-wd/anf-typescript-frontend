@@ -63,20 +63,20 @@ export default function DonationMethods() {
   const Icon = selectedPayment?.icon || Smartphone;
 
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-white to-rose-50/30">
+    <section className="py-5 bg-gradient-to-b from-white to-rose-50/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
           <div className="text-center mb-16">
             <div className="inline-flex items-center gap-2 bg-white rounded-full px-4 py-2 mb-6 border border-rose-100 shadow-sm">
-              <Shield className="w-4 h-4 text-rose-600" />
-              <span className="text-rose-700 font-semibold text-sm font-bangla">
+              <Shield className="w-4 h-4 text-primary" />
+              <span className="text-primary font-semibold text-sm font-bangla">
                 নিরাপদ পেমেন্ট
               </span>
             </div>
             
             <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-6 font-bangla">
-              <span className="bg-gradient-to-r from-rose-600 to-pink-600 bg-clip-text text-transparent">
+              <span className="bg-primary bg-clip-text text-transparent">
                 দানের মাধ্যম
               </span>
             </h2>
