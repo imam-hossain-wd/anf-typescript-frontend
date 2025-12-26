@@ -5,7 +5,7 @@ import { Shield, Target, Award } from 'lucide-react';
 
 export default function AboutHero() {
   return (
-    <section className="relative py-16 md:py-24 bg-gradient-to-br from-emerald-50 via-white to-emerald-25">
+    <section className="relative pt-20 bg-gradient-to-br from-emerald-50 via-white to-emerald-25">
       {/* Background Elements */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
         <div className="absolute top-0 right-0 w-64 h-64 bg-emerald-100/30 rounded-full blur-3xl" />

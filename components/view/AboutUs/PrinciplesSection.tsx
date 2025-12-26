@@ -56,7 +56,7 @@ const additionalPrinciples = [
 
 export default function PrinciplesSection() {
   return (
-    <section className="py-16 md:py-24 bg-gradient-to-b from-white to-emerald-50/30">
+    <section className="py-bg-gradient-to-b from-white to-emerald-50/30">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}

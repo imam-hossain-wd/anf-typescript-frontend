@@ -4,7 +4,7 @@ import { Users, Book, Heart, Target } from 'lucide-react';
 
 export default function AboutSection() {
   return (
-    <section className="py-16 md:py-24 bg-white">
+    <section className="py-6 bg-white">
       <div className="container mx-auto px-4 sm:px-6 lg:px-8">
         <div className="max-w-6xl mx-auto">
           {/* Section Header */}
