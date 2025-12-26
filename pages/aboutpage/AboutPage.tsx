@@ -1,5 +1,6 @@
 import AboutHero from "@/components/view/AboutUs/AboutHero";
 import AboutSection from "@/components/view/AboutUs/AboutSection";
+import ObjectivesSection from "@/components/view/AboutUs/ObjectivesSection";
 import PrinciplesSection from "@/components/view/AboutUs/PrinciplesSection";
 
 
@@ -9,6 +10,9 @@ export default function AboutPage() {
       <AboutHero />
       <AboutSection />
       <PrinciplesSection />
+      <ObjectivesSection />
+      {/* < /> */}
+      {/* < /> */}
     </div>
   )
 }
