@@ -88,7 +88,6 @@ const Navbar = () => {
                     alt="As Nusra Foundation Logo"
                     className="transition-transform duration-300 group-hover:scale-105 -ml-3 md:ml-0 w-36 h-32"
                   />
-                  {/* <div className="absolute -inset-2 bg-emerald-100 rounded-full opacity-0 group-hover:opacity-100 blur-md transition-opacity duration-300 -z-10"></div> */}
                 </div>
               </Link>
             </div>
@@ -102,15 +101,11 @@ const Navbar = () => {
                   className={cn(
                     "relative px-4 py-2 rounded-xl font-medium transition-all duration-300 group",
                     pathname === item.href
-                      ? "text-emerald-700 bg-emerald-50 shadow-sm"
-                      : "text-gray-700 hover:text-emerald-600 hover:bg-gray-50"
+                      ? "text-emerald-700 "
+                      : "text-gray-700 hover:text-emerald-600 "
                   )}
                 >
                   {item.name}
-                  {pathname === item.href && (
-                    <div className="absolute bottom-0 left-1/2 transform -translate-x-1/2 w-1 h-1 bg-emerald-500 rounded-full"></div>
-                  )}
-                  <div className="absolute inset-0 border border-emerald-200 rounded-xl opacity-0 group-hover:opacity-100 transition-opacity duration-300"></div>
                 </Link>
               ))}
             </nav>
